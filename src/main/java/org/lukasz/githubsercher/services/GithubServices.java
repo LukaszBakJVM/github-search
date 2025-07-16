@@ -1,6 +1,7 @@
 package org.lukasz.githubsercher.services;
 
 
+import lombok.SneakyThrows;
 import org.lukasz.githubsercher.dto.Mapper;
 import org.lukasz.githubsercher.dto.RepositoryDto;
 import org.lukasz.githubsercher.exceptions.UserNotFoundException;
@@ -14,6 +15,7 @@ import org.springframework.web.client.RestClient;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 
 
 @Service
@@ -31,6 +33,7 @@ public class GithubServices {
     }
 
 
+    @SneakyThrows
     public List<RepositoryDto> getRepositories(String username) {
 
 
@@ -40,10 +43,19 @@ public class GithubServices {
             }
         }).body((new ParameterizedTypeReference<>() {
         }));
-        return repositories.stream().filter(r -> !r.fork()).map(repository -> mapper.fromRepositoryToDto(new Repository(repository.name(), repository.owner(), repository.fork(),
+        List<Future<RepositoryDto>> futures = repositories.stream()
+                .filter(r -> !r.fork())
+                .map(repo -> executorService.submit(() -> {
+                    List<Branch> branches = getBranches(username, repo.name());
+                    return mapper.fromRepositoryToDto(new Repository(repo.name(), repo.owner(), repo.fork(), branches));
+                }))
+                .toList();
 
-                this.getBranches(username, repository.name())))).toList();
-
+        List<RepositoryDto> result = new java.util.ArrayList<>();
+        for (Future<RepositoryDto> future : futures) {
+            result.add(future.get());
+        }
+        return result;
 
     }
 
