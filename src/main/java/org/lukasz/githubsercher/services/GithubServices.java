@@ -4,6 +4,7 @@ package org.lukasz.githubsercher.services;
 import lombok.SneakyThrows;
 import org.lukasz.githubsercher.dto.Mapper;
 import org.lukasz.githubsercher.dto.RepositoryDto;
+import org.lukasz.githubsercher.exceptions.FutureException;
 import org.lukasz.githubsercher.exceptions.UserNotFoundException;
 import org.lukasz.githubsercher.model.Branch;
 import org.lukasz.githubsercher.model.Repository;
@@ -14,10 +15,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
 
 
 @Service
@@ -46,16 +46,18 @@ public class GithubServices {
             throw new ResponseStatusException(response.getStatusCode());
         })).body((new ParameterizedTypeReference<>() {
         }));
-        List<Future<RepositoryDto>> futures = repositories.stream().filter(r -> !r.fork()).map(repo -> executorService.submit(() -> {
+        return repositories.stream().filter(r -> !r.fork()).map(repo -> executorService.submit(() -> {
             List<Branch> branches = getBranches(username, repo.name());
             return mapper.fromRepositoryToDto(new Repository(repo.name(), repo.owner(), repo.fork(), branches));
-        })).toList();
+        })).toList().stream().map(future -> {
+            try {
+                return future.get();
+            } catch (InterruptedException | ExecutionException e) {
+                throw new FutureException("Services unavailable");
+            }
+        }).toList();
 
-        List<RepositoryDto> result = new ArrayList<>();
-        for (Future<RepositoryDto> future : futures) {
-            result.add(future.get());
-        }
-        return result;
+
     }
 
     List<Branch> getBranches(String username, String repositoryName) {
