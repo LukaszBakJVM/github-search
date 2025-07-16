@@ -1,0 +1,40 @@
+{
+  "id" : "5258c1d5-7680-4c41-b177-3441ac00b30d",
+  "name" : "repos_octocat_spoon-knife_branches",
+  "request" : {
+    "url" : "/repos/octocat/Spoon-Knife/branches",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "[{\"name\":\"change-the-title\",\"commit\":{\"sha\":\"f439fc5710cd87a4025247e8f75901cdadf5333d\",\"url\":\"https://api.github.com/repos/octocat/Spoon-Knife/commits/f439fc5710cd87a4025247e8f75901cdadf5333d\"},\"protected\":false},{\"name\":\"main\",\"commit\":{\"sha\":\"d0dd1f61b33d64e29d8bc1372a94ef6a2fee76a9\",\"url\":\"https://api.github.com/repos/octocat/Spoon-Knife/commits/d0dd1f61b33d64e29d8bc1372a94ef6a2fee76a9\"},\"protected\":false},{\"name\":\"test-branch\",\"commit\":{\"sha\":\"58060701b538587e8b4ab127253e6ed6fbdc53d1\",\"url\":\"https://api.github.com/repos/octocat/Spoon-Knife/commits/58060701b538587e8b4ab127253e6ed6fbdc53d1\"},\"protected\":false}]",
+    "headers" : {
+      "X-RateLimit-Resource" : "core",
+      "Server" : "GitHub.com",
+      "X-RateLimit-Used" : "22",
+      "Access-Control-Allow-Origin" : "*",
+      "X-Content-Type-Options" : "nosniff",
+      "X-RateLimit-Reset" : "1708123542",
+      "x-github-api-version-selected" : "2022-11-28",
+      "Date" : "Fri, 16 Feb 2024 22:37:59 GMT",
+      "Accept-Ranges" : "bytes",
+      "Referrer-Policy" : "origin-when-cross-origin, strict-origin-when-cross-origin",
+      "X-Frame-Options" : "deny",
+      "Strict-Transport-Security" : "max-age=31536000; includeSubdomains; preload",
+      "Access-Control-Expose-Headers" : "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset",
+      "X-RateLimit-Remaining" : "38",
+      "Cache-Control" : "public, max-age=60, s-maxage=60",
+      "X-GitHub-Media-Type" : "github.v3; format=json",
+      "ETag" : "W/\"2fcd70b1d89df1ea5fad31e5a63f507fca42722e9a01e62624e6bb226b31cb9b\"",
+      "Content-Security-Policy" : "default-src 'none'",
+      "Vary" : "Accept, Accept-Encoding, Accept, X-Requested-With",
+      "X-RateLimit-Limit" : "60",
+      "X-XSS-Protection" : "0",
+      "X-GitHub-Request-Id" : "DE31:0EA0:A85F63:AA45AA:65CFE3C7",
+      "Content-Type" : "application/json; charset=utf-8"
+    }
+  },
+  "uuid" : "5258c1d5-7680-4c41-b177-3441ac00b30d",
+  "persistent" : true,
+  "insertionIndex" : 10
+}

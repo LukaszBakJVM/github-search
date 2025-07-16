@@ -1,0 +1,35 @@
+{
+  "id" : "27f5a32f-2463-47f8-8708-5f4a5f9788f1",
+  "name" : "users_lukaszbakjvm_repos",
+  "request" : {
+    "url" : "/users/LukaszBakJVM/repos",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 403,
+    "body" : "{\"message\":\"API rate limit exceeded for 185.182.226.3. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)\",\"documentation_url\":\"https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting\"}\n",
+    "headers" : {
+      "X-RateLimit-Resource" : "core",
+      "Server" : "Varnish",
+      "X-RateLimit-Used" : "60",
+      "Access-Control-Allow-Origin" : "*",
+      "X-Content-Type-Options" : "nosniff",
+      "X-RateLimit-Reset" : "1708171058",
+      "Date" : "Sat, 17 Feb 2024 11:00:37 GMT",
+      "Referrer-Policy" : "origin-when-cross-origin, strict-origin-when-cross-origin",
+      "X-Frame-Options" : "deny",
+      "Access-Control-Expose-Headers" : "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-RateLimit-Used, X-RateLimit-Resource, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset",
+      "Strict-Transport-Security" : "max-age=31536000; includeSubdomains; preload",
+      "X-RateLimit-Remaining" : "0",
+      "X-GitHub-Media-Type" : "github.v3; format=json",
+      "Content-Security-Policy" : "default-src 'none'; style-src 'unsafe-inline'",
+      "X-RateLimit-Limit" : "60",
+      "X-XSS-Protection" : "1; mode=block",
+      "X-GitHub-Request-Id" : "EFEA:AC6D9:38718C0:391B0FD:65D091D5",
+      "Content-Type" : "application/json; charset=utf-8"
+    }
+  },
+  "uuid" : "27f5a32f-2463-47f8-8708-5f4a5f9788f1",
+  "persistent" : true,
+  "insertionIndex" : 17
+}

@@ -1,0 +1,40 @@
+{
+  "id" : "e70bfa5d-85cb-46a6-9f97-98167a5fe949",
+  "name" : "repos_octocat_test-repo1_branches",
+  "request" : {
+    "url" : "/repos/octocat/test-repo1/branches",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "[{\"name\":\"gh-pages\",\"commit\":{\"sha\":\"57523742631876181d95bc268e09fb3fd1a4d85e\",\"url\":\"https://api.github.com/repos/octocat/test-repo1/commits/57523742631876181d95bc268e09fb3fd1a4d85e\"},\"protected\":false}]",
+    "headers" : {
+      "X-RateLimit-Resource" : "core",
+      "Server" : "GitHub.com",
+      "X-RateLimit-Used" : "27",
+      "Access-Control-Allow-Origin" : "*",
+      "X-Content-Type-Options" : "nosniff",
+      "X-RateLimit-Reset" : "1708123542",
+      "x-github-api-version-selected" : "2022-11-28",
+      "Date" : "Fri, 16 Feb 2024 22:39:39 GMT",
+      "Accept-Ranges" : "bytes",
+      "Referrer-Policy" : "origin-when-cross-origin, strict-origin-when-cross-origin",
+      "X-Frame-Options" : "deny",
+      "Strict-Transport-Security" : "max-age=31536000; includeSubdomains; preload",
+      "Access-Control-Expose-Headers" : "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset",
+      "X-RateLimit-Remaining" : "33",
+      "Cache-Control" : "public, max-age=60, s-maxage=60",
+      "X-GitHub-Media-Type" : "github.v3; format=json",
+      "ETag" : "W/\"1a24c8f72f3445cb1bb166fc5581127fb8559a4235a2c3db124ab6e6aef3cd58\"",
+      "Content-Security-Policy" : "default-src 'none'",
+      "Vary" : "Accept, Accept-Encoding, Accept, X-Requested-With",
+      "X-RateLimit-Limit" : "60",
+      "X-XSS-Protection" : "0",
+      "X-GitHub-Request-Id" : "DE54:8C0FF:116ACB7:11983B1:65CFE42A",
+      "Content-Type" : "application/json; charset=utf-8"
+    }
+  },
+  "uuid" : "e70bfa5d-85cb-46a6-9f97-98167a5fe949",
+  "persistent" : true,
+  "insertionIndex" : 5
+}

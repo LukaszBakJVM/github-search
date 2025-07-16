@@ -1,0 +1,40 @@
+{
+  "id" : "dc43a3b3-028f-45bd-b787-d3565496ede7",
+  "name" : "repos_octocat_hello-worid_branches",
+  "request" : {
+    "url" : "/repos/octocat/hello-worId/branches",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "[{\"name\":\"master\",\"commit\":{\"sha\":\"7e068727fdb347b685b658d2981f8c85f7bf0585\",\"url\":\"https://api.github.com/repos/octocat/hello-worId/commits/7e068727fdb347b685b658d2981f8c85f7bf0585\"},\"protected\":false}]",
+    "headers" : {
+      "X-RateLimit-Resource" : "core",
+      "Server" : "GitHub.com",
+      "X-RateLimit-Used" : "25",
+      "Access-Control-Allow-Origin" : "*",
+      "X-Content-Type-Options" : "nosniff",
+      "X-RateLimit-Reset" : "1708123542",
+      "x-github-api-version-selected" : "2022-11-28",
+      "Date" : "Fri, 16 Feb 2024 22:39:02 GMT",
+      "Accept-Ranges" : "bytes",
+      "Referrer-Policy" : "origin-when-cross-origin, strict-origin-when-cross-origin",
+      "X-Frame-Options" : "deny",
+      "Strict-Transport-Security" : "max-age=31536000; includeSubdomains; preload",
+      "Access-Control-Expose-Headers" : "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset",
+      "X-RateLimit-Remaining" : "35",
+      "Cache-Control" : "public, max-age=60, s-maxage=60",
+      "X-GitHub-Media-Type" : "github.v3; format=json",
+      "ETag" : "W/\"974a3ac82fbfec09106a70e2777f3e00faa970e57dfb39f8984bf3081f7ef892\"",
+      "Content-Security-Policy" : "default-src 'none'",
+      "Vary" : "Accept, Accept-Encoding, Accept, X-Requested-With",
+      "X-RateLimit-Limit" : "60",
+      "X-XSS-Protection" : "0",
+      "X-GitHub-Request-Id" : "DE48:0EA0:A92538:AB0E2C:65CFE406",
+      "Content-Type" : "application/json; charset=utf-8"
+    }
+  },
+  "uuid" : "dc43a3b3-028f-45bd-b787-d3565496ede7",
+  "persistent" : true,
+  "insertionIndex" : 7
+}

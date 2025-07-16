@@ -1,0 +1,40 @@
+{
+  "id" : "bb0e37b7-b26a-4fce-8378-4166b8e6b1a3",
+  "name" : "repos_octocat_octocat.github.io_branches",
+  "request" : {
+    "url" : "/repos/octocat/octocat.github.io/branches",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "[{\"name\":\"gh-pages\",\"commit\":{\"sha\":\"c0e4a095428f36b81f0bd4239d353f71918cbef3\",\"url\":\"https://api.github.com/repos/octocat/octocat.github.io/commits/c0e4a095428f36b81f0bd4239d353f71918cbef3\"},\"protected\":false},{\"name\":\"master\",\"commit\":{\"sha\":\"3a9796cf19902af0f7e677391b340f1ae4128433\",\"url\":\"https://api.github.com/repos/octocat/octocat.github.io/commits/3a9796cf19902af0f7e677391b340f1ae4128433\"},\"protected\":false}]",
+    "headers" : {
+      "X-RateLimit-Resource" : "core",
+      "Server" : "GitHub.com",
+      "X-RateLimit-Used" : "24",
+      "Access-Control-Allow-Origin" : "*",
+      "X-Content-Type-Options" : "nosniff",
+      "X-RateLimit-Reset" : "1708123542",
+      "x-github-api-version-selected" : "2022-11-28",
+      "Date" : "Fri, 16 Feb 2024 22:38:41 GMT",
+      "Accept-Ranges" : "bytes",
+      "Referrer-Policy" : "origin-when-cross-origin, strict-origin-when-cross-origin",
+      "X-Frame-Options" : "deny",
+      "Strict-Transport-Security" : "max-age=31536000; includeSubdomains; preload",
+      "Access-Control-Expose-Headers" : "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset",
+      "X-RateLimit-Remaining" : "36",
+      "Cache-Control" : "public, max-age=60, s-maxage=60",
+      "X-GitHub-Media-Type" : "github.v3; format=json",
+      "ETag" : "W/\"fba8975d320900fddb1846b601c7f336032d181c4c26a4d55fe7645b072e1c6b\"",
+      "Content-Security-Policy" : "default-src 'none'",
+      "Vary" : "Accept, Accept-Encoding, Accept, X-Requested-With",
+      "X-RateLimit-Limit" : "60",
+      "X-XSS-Protection" : "0",
+      "X-GitHub-Request-Id" : "DE42:EA6EC:15F3397:1628CB8:65CFE3F1",
+      "Content-Type" : "application/json; charset=utf-8"
+    }
+  },
+  "uuid" : "bb0e37b7-b26a-4fce-8378-4166b8e6b1a3",
+  "persistent" : true,
+  "insertionIndex" : 8
+}

@@ -1,0 +1,40 @@
+{
+  "id" : "9c09058f-1668-40f7-b776-7ea8abcd3930",
+  "name" : "repos_octocat_git-consortium_branches",
+  "request" : {
+    "url" : "/repos/octocat/git-consortium/branches",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "[{\"name\":\"master\",\"commit\":{\"sha\":\"b33a9c7c02ad93f621fa38f0e9fc9e867e12fa0e\",\"url\":\"https://api.github.com/repos/octocat/git-consortium/commits/b33a9c7c02ad93f621fa38f0e9fc9e867e12fa0e\"},\"protected\":false}]",
+    "headers" : {
+      "X-RateLimit-Resource" : "core",
+      "Server" : "GitHub.com",
+      "X-RateLimit-Used" : "23",
+      "Access-Control-Allow-Origin" : "*",
+      "X-Content-Type-Options" : "nosniff",
+      "X-RateLimit-Reset" : "1708123542",
+      "x-github-api-version-selected" : "2022-11-28",
+      "Date" : "Fri, 16 Feb 2024 22:38:20 GMT",
+      "Accept-Ranges" : "bytes",
+      "Referrer-Policy" : "origin-when-cross-origin, strict-origin-when-cross-origin",
+      "X-Frame-Options" : "deny",
+      "Strict-Transport-Security" : "max-age=31536000; includeSubdomains; preload",
+      "Access-Control-Expose-Headers" : "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset",
+      "X-RateLimit-Remaining" : "37",
+      "Cache-Control" : "public, max-age=60, s-maxage=60",
+      "X-GitHub-Media-Type" : "github.v3; format=json",
+      "ETag" : "W/\"e31dc192d5657b0d4f322effd410bcee79b0c61e39944d9402f090d4e9f1ed53\"",
+      "Content-Security-Policy" : "default-src 'none'",
+      "Vary" : "Accept, Accept-Encoding, Accept, X-Requested-With",
+      "X-RateLimit-Limit" : "60",
+      "X-XSS-Protection" : "0",
+      "X-GitHub-Request-Id" : "DE3D:10C06D:1240CEE:127395D:65CFE3DC",
+      "Content-Type" : "application/json; charset=utf-8"
+    }
+  },
+  "uuid" : "9c09058f-1668-40f7-b776-7ea8abcd3930",
+  "persistent" : true,
+  "insertionIndex" : 9
+}

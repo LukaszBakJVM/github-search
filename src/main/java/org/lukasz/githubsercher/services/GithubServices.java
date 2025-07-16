@@ -1,15 +1,20 @@
 package org.lukasz.githubsercher.services;
 
 
+import lombok.SneakyThrows;
 import org.lukasz.githubsercher.dto.Mapper;
+import org.lukasz.githubsercher.dto.RepositoryDto;
 import org.lukasz.githubsercher.model.Branch;
 import org.lukasz.githubsercher.model.Repository;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 
 
 @Service
@@ -27,25 +32,28 @@ public class GithubServices {
     }
 
 
-    public List<Repository> getRepositories(String username) {
+    @SneakyThrows
+    public List<RepositoryDto> getRepositories(String username) {
 
 
-        List<Repository> repositories = restClient.get().uri("/users/{username}/repos", username).
-                header("Accept", "application/json").retrieve().
-                body((new ParameterizedTypeReference<>() {
-                }));
-        return repositories.stream()
-                .map(repository -> (new Repository(repository.name(), repository.owner(),
-                       ! repository.fork(),
-                        this.getBranches(username, repository.name())))).toList();
+        List<Repository> repositories = restClient.get().uri("/users/{username}/repos", username).accept(MediaType.APPLICATION_JSON).retrieve().body((new ParameterizedTypeReference<>() {
+        }));
+        List<Future<RepositoryDto>> futures = repositories.stream().filter(r -> !r.fork()).map(repo -> executorService.submit(() -> {
+            List<Branch> branches = getBranches(username, repo.name());
+            return mapper.fromRepositoryToDto(new Repository(repo.name(), repo.owner(), repo.fork(), branches));
+        })).toList();
 
-
+        List<RepositoryDto> result = new ArrayList<>();
+        for (Future<RepositoryDto> future : futures) {
+            result.add(future.get());
+        }
+        return result;
     }
 
     List<Branch> getBranches(String username, String repositoryName) {
-        return restClient.get().uri("/repos/{username}/{repositoryName}/branches", username, repositoryName).header("Accept", "application/json").retrieve().
-                body((new ParameterizedTypeReference<>() {
-                }));
+        return restClient.get().uri("/repos/{username}/{repositoryName}/branches", username, repositoryName).
+                accept(MediaType.APPLICATION_JSON).retrieve().body((new ParameterizedTypeReference<>() {
+        }));
 
     }
 }
