@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,7 @@ public class GithubServices {
             if (response.getStatusCode().value() == 404) {
                 throw new UserNotFoundException(String.format("User %s not found", username));
             }
+            throw new ResponseStatusException(response.getStatusCode());
         })).body((new ParameterizedTypeReference<>() {
         }));
         List<Future<RepositoryDto>> futures = repositories.stream().filter(r -> !r.fork()).map(repo -> executorService.submit(() -> {
