@@ -1,6 +1,6 @@
 package org.lukasz.githubsercher.controller;
 
-import org.lukasz.githubsercher.model.Repository;
+import org.lukasz.githubsercher.dto.RepositoryDto;
 import org.lukasz.githubsercher.services.GithubServices;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +19,7 @@ public class GithubController {
     }
 
     @GetMapping("/{username}")
-    List<Repository> getGithubRepositories(@PathVariable String username) {
+    List<RepositoryDto> getGithubRepositories(@PathVariable String username) {
         return githubServices.getRepositories(username);
     }
 }
