@@ -2,7 +2,7 @@ package org.lukasz.githubsercher;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import net.bytebuddy.description.method.MethodDescription;
+import org.lukasz.githubsercher.dto.RepositoryDto;
 import org.lukasz.githubsercher.model.Repository;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -13,17 +13,17 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 public class Response {
+    Gson gson = new Gson();
 
-    private static final List<Repository> repositories = loadRepositories();
-    static String jsonData;
 
-    static {
-        Gson gson = new Gson();
-        jsonData = gson.toJson(repositories);
-    }
+    private final List<Repository> repositories = loadRepositories();
+    String jsonData = gson.toJson(repositories);
+    Type listType = new TypeToken<List<RepositoryDto>>() {
+    }.getType();
+    List<RepositoryDto> expected = gson.fromJson(this.jsonData, listType);
 
-    private static List<Repository> loadRepositories() {
-        Gson gson = new Gson();
+    private List<Repository> loadRepositories() {
+
         Resource resource = new ClassPathResource("response.json");
         try (InputStreamReader reader = new InputStreamReader(resource.getInputStream())) {
             Type listType = new TypeToken<List<Repository>>() {
