@@ -2,10 +2,8 @@ package org.lukasz.githubsercher.controller;
 
 import org.lukasz.githubsercher.dto.RepositoryDto;
 import org.lukasz.githubsercher.services.GithubServices;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +17,7 @@ public class GithubController {
     }
 
     @GetMapping("/{username}")
+    @ResponseStatus(HttpStatus.OK)
     List<RepositoryDto> getGithubRepositories(@PathVariable String username) {
         return githubServices.getRepositories(username);
     }
