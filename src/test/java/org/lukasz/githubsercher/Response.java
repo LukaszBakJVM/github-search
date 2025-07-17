@@ -18,8 +18,7 @@ public class Response {
 
     private final List<Repository> repositories = loadRepositories();
     String jsonData = gson.toJson(repositories);
-    Type listType = new TypeToken<List<RepositoryDto>>() {
-    }.getType();
+    Type listType = new TypeToken<List<RepositoryDto>>() {}.getType();
     List<RepositoryDto> expected = gson.fromJson(this.jsonData, listType);
 
     private List<Repository> loadRepositories() {
