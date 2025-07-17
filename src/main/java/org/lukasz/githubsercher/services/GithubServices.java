@@ -60,7 +60,7 @@ public class GithubServices {
 
     }
 
-    List<Branch> getBranches(String username, String repositoryName) {
+  private   List<Branch> getBranches(String username, String repositoryName) {
         return restClient.get().uri("/repos/{username}/{repositoryName}/branches", username, repositoryName).accept(MediaType.APPLICATION_JSON).retrieve().body((new ParameterizedTypeReference<>() {
         }));
 

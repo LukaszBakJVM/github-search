@@ -18,7 +18,7 @@ public class GithubController {
 
     @GetMapping("/{username}")
     @ResponseStatus(HttpStatus.OK)
-    List<RepositoryDto> getGithubRepositories(@PathVariable String username) {
+   public List<RepositoryDto> getGithubRepositories(@PathVariable String username) {
         return githubServices.getRepositories(username);
     }
 }
