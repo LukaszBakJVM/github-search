@@ -1,9 +1,8 @@
 package org.lukasz.githubsercher;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.lukasz.githubsercher.controller.GithubController;
@@ -16,6 +15,7 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import java.lang.reflect.Type;
 import java.util.List;
 
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
@@ -31,7 +31,7 @@ class GithubsercherApplicationTests {
     @Autowired
     WebTestClient webTestClient;
     @Autowired
-    ObjectMapper objectMapper;
+    Gson gson;
     @Autowired
     private GithubController githubController;
 
@@ -52,13 +52,15 @@ class GithubsercherApplicationTests {
     }
 
     @Test
-    void testGetRepositoriesWithWireMock() throws JsonProcessingException {
+    void testGetRepositoriesWithWireMock() {
 
 
         List<RepositoryDto> repos = githubController.getGithubRepositories("octocat");
 
-        List<RepositoryDto> expected = objectMapper.readValue(Response.jsonData, new TypeReference<>() {
-        });
+        Type listType = new TypeToken<List<RepositoryDto>>() {
+        }.getType();
+        List<RepositoryDto> expected = gson.fromJson(Response.jsonData, listType);
+
         assertThat(repos).isEqualTo(expected);
 
 
