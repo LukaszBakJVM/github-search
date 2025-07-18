@@ -4,14 +4,12 @@ import org.lukasz.githubsercher.model.Branch;
 import org.lukasz.githubsercher.model.Commit;
 import org.lukasz.githubsercher.model.Owner;
 import org.lukasz.githubsercher.model.Repository;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class Mapper {
-
 
 
     public RepositoryDto fromRepositoryToDto(Repository repository) {

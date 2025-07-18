@@ -1,7 +1,6 @@
 package org.lukasz.githubsercher.services;
 
 
-import lombok.SneakyThrows;
 import org.lukasz.githubsercher.dto.Mapper;
 import org.lukasz.githubsercher.dto.RepositoryDto;
 import org.lukasz.githubsercher.exceptions.FutureException;
@@ -35,7 +34,6 @@ public class GithubServices {
     }
 
 
-    @SneakyThrows
     public List<RepositoryDto> getRepositories(String username) {
 
 
@@ -60,7 +58,7 @@ public class GithubServices {
 
     }
 
-  private   List<Branch> getBranches(String username, String repositoryName) {
+    private List<Branch> getBranches(String username, String repositoryName) {
         return restClient.get().uri("/repos/{username}/{repositoryName}/branches", username, repositoryName).accept(MediaType.APPLICATION_JSON).retrieve().body((new ParameterizedTypeReference<>() {
         }));
 
